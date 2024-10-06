@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode / Light Mode Toggle</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: white; /* Initial light mode */
+            transition: background-color 0.5s ease;
+        }
+
+        .toggle-btn{
+            height: 100px;
+            width: 100px;
+            position: relative;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .rotate_pro{
+            transform: rotate(180deg);
+        }  
+        .toggle-btn img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }      
+    </style>
+</head>
+<body>
+    <div class="toggle-btn">
+        <img src="https://png.pngtree.com/png-vector/20221001/ourmid/pngtree-brightness-dark-mode-glyph-ui-icon-brightness-interface-clip-art-vector-png-image_49027856.jpg" alt="">
+    
+    </div>
+    <script>
+        const body = document.querySelector('body');
+        const button = document.querySelector('.toggle-btn');
+        let darkMode = true;
+        button.addEventListener('click',()=>{
+            
+            button.classList.toggle('rotate_pro');
+            
+            if(darkMode){
+                body.style.background='black';
+            }
+            else{
+                body.style.background='white';
+            }
+            darkMode = !darkMode;
+        })  
+    </script>
+</body>
+</html>
