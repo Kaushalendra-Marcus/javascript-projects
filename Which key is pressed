@@ -1,0 +1,72 @@
+// Which key is pressed
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: #333;
+      color: white;
+      font-size: 20px;
+    }
+    .project {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    table {
+      width: 100%;
+      max-width: 600px;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #fff;
+      text-align: center;
+    }
+    th {
+      background-color: #444;
+    }
+    .key {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="project">
+    <div id="insert">
+      <div class="key">Press key and watch the magic</div>
+    </div>
+  </div>
+
+  <script">
+    const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class="color">
+    <table>
+      <tr>
+        <th>Key</th>
+        <th>Key Code</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>${e.key === ' ' ? 'Space' : e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    </table>
+  </div>
+  `;
+});
+
+</script>
+</body>
+</html>
